@@ -1,4 +1,4 @@
-#include "Student.hpp"
+п»ї#include "Student.hpp"
 #include <algorithm>
 
 using namespace std;
@@ -8,21 +8,21 @@ int cmp(const void * a, const void *b) {
 }
 
 int main() {
-	const int size = 3;//размер массива	 10
+	const int size = 3;//СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°	 10
 	setlocale(LC_ALL, "");
-	Student students[size];//сам массив студентов
+	Student students[size];//СЃР°Рј РјР°СЃСЃРёРІ СЃС‚СѓРґРµРЅС‚РѕРІ
 	int a;
 	while (true) {
-		cout << "\n1. Считать данные\n2. Вывод двоечников\n3. Вывод всех\n4. Выход\n-> ";
+		cout << "\n1. РЎС‡РёС‚Р°С‚СЊ РґР°РЅРЅС‹Рµ\n2. Р’С‹РІРѕРґ РґРІРѕРµС‡РЅРёРєРѕРІ\n3. Р’С‹РІРѕРґ РІСЃРµС…\n4. Р’С‹С…РѕРґ\n-> ";
 		cin >> a;
 		if (a == 1) {
-			cout << "Фамилия Инициалы Группа оценки[5]\n";
+			cout << "Р¤Р°РјРёР»РёСЏ РРЅРёС†РёР°Р»С‹ Р“СЂСѓРїРїР° РѕС†РµРЅРєРё[5]\n";
 			try {
-				//считываем данные
+				//СЃС‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ
 				for (int i = 0; i < size; ++i) {
 					cin >> students[i];
 				}
-				/*Сортируем*/
+				/*РЎРѕСЂС‚РёСЂСѓРµРј*/
 				qsort(students, size, sizeof(Student), cmp);
 			}
 			catch (const Exception& e) {
@@ -38,7 +38,7 @@ int main() {
 				}
 			}
 			if (flg) {
-				cout << "Не найдено!";
+				cout << "РќРµ РЅР°Р№РґРµРЅРѕ!";
 			}
 		}
 		else if (a == 3) {

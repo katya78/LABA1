@@ -1,4 +1,4 @@
-#include "Student.hpp"
+п»ї#include "Student.hpp"
 
 Student::Student(const std::string& init, const std::string& surname, const std::string& group, int * marks) :
 	init(init), surname(surname), group(group) {
@@ -16,7 +16,7 @@ Student::Student(const std::string& init, const std::string& surname, const std:
 		this->marks[3] = 1;
 		this->marks[4] = 1;
 	}
-	std::cout << "\nконструктор Student";
+	std::cout << "\nРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Student";
 }
 
 Student::Student(const Student& s) :
@@ -26,12 +26,12 @@ Student::Student(const Student& s) :
 	marks[2] = s.marks[2];
 	marks[3] = s.marks[3];
 	marks[4] = s.marks[4];
-	std::cout << "\nконструктор копирования Student";
+	std::cout << "\nРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ Student";
 }
 
-Student::~Student() { std::cout << "\nдеструктор Student"; }
+Student::~Student() { std::cout << "\nРґРµСЃС‚СЂСѓРєС‚РѕСЂ Student"; }
 
-Student& Student::operator=(const Student& s) {//оператор присваивания
+Student& Student::operator=(const Student& s) {//РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	if (this == &s) {
 		return *this;
 	}
@@ -45,7 +45,7 @@ Student& Student::operator=(const Student& s) {//оператор присваивания
 	marks[4] = s.marks[4];
 	return *this;
 }
-//геттеры и сеттеры
+//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 std::string& Student::initials() { return init; }
 std::string& Student::Surname() { return surname; }
 std::string& Student::Group() { return group; }
@@ -54,14 +54,14 @@ int* Student::Marks() {
 }
 
 
-std::istream& operator >> (std::istream& in, Student& s) {//оператор ввода
+std::istream& operator >> (std::istream& in, Student& s) {//РѕРїРµСЂР°С‚РѕСЂ РІРІРѕРґР°
 	if (!(in >> s.group >> s.surname >> s.group >> s.marks[0] >> s.marks[1] >> s.marks[2] >> s.marks[3] >> s.marks[4])) {
-		throw Exception("Некорректный ввод");
+		throw Exception("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ");
 	}
 	return in;
 }
 
-std::ostream& operator<<(std::ostream& out, const Student& s) {//оператор вывода
+std::ostream& operator<<(std::ostream& out, const Student& s) {//РѕРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
 	out << s.surname << ' ' << s.init << ' ' << s.group
 		<< "\n" << s.marks[0] << ' ' << s.marks[1] << ' ' << s.marks[2] << ' ' << s.marks[3] << ' ' << s.marks[4];
 	return out;

@@ -1,26 +1,26 @@
-#pragma once
+п»ї#pragma once
 #include "Exception.hpp"
 #include <iostream>
 
 class Student {
 private:
-	std::string init;//инициалы
-	std::string surname;//фамилия
-	std::string group;//группа
-	int marks[5];//успеваемость
+	std::string init;//РёРЅРёС†РёР°Р»С‹
+	std::string surname;//С„Р°РјРёР»РёСЏ
+	std::string group;//РіСЂСѓРїРїР°
+	int marks[5];//СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ
 public:
 	Student(const std::string& init = "", const std::string& surname = "", const std::string& group = "", int* marks = nullptr);
 	Student(const Student& s);
 	~Student();
-	Student& operator=(const Student& s);//оператор присваивания
+	Student& operator=(const Student& s);//РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 public:
-	friend std::istream& operator >> (std::istream& in, Student& s);//оператор ввода
-	friend std::ostream& operator<<(std::ostream& out, const Student& s);//оператор вывода
+	friend std::istream& operator >> (std::istream& in, Student& s);//РѕРїРµСЂР°С‚РѕСЂ РІРІРѕРґР°
+	friend std::ostream& operator<<(std::ostream& out, const Student& s);//РѕРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
 public:
 	std::string& initials();
 	std::string& Surname();
 	std::string& Group();
 	int* Marks();
-	//выводит, являются ли оценки хорошими
+	//РІС‹РІРѕРґРёС‚, СЏРІР»СЏСЋС‚СЃСЏ Р»Рё РѕС†РµРЅРєРё С…РѕСЂРѕС€РёРјРё
 	bool ContainTwo() const;
 };
